@@ -1,0 +1,24 @@
+name: Laravel Pint
+
+on: push
+
+jobs:
+  laravel-pint:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Laravel Pint
+        uses: aglipanci/laravel-pint-action@latest
+        with:
+          preset: laravel
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Fix coding standards using Laravel Pint
