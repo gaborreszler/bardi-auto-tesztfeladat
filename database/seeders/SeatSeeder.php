@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Enums\SeatStatus;
 use App\Models\Seat;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SeatSeeder extends Seeder

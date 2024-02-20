@@ -74,7 +74,7 @@ class ReservationController extends Controller
         $reservation->email = $validated['email'];
         $reservation->save();
 
-        foreach($reservation->reservationSeats as $reservationSeat) {
+        foreach ($reservation->reservationSeats as $reservationSeat) {
             $reservationSeat->seat->status = SeatStatus::TAKEN->value;
             $reservationSeat->seat->save();
         }

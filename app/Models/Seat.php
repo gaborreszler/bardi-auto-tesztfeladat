@@ -12,8 +12,11 @@ class Seat extends Model
     use HasFactory;
 
     public const int ROWS = 4;
+
     public const int COLUMNS = 12;
+
     public const int ALL_SEATS = self::ROWS * self::COLUMNS;
+
     public static int $freeSeats = 2;
 
     public function reservationSeat(): HasOne

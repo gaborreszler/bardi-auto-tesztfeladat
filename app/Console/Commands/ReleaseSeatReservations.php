@@ -31,7 +31,7 @@ class ReleaseSeatReservations extends Command
     {
         $reservations = Reservation::query()
             ->where('paid', false)
-            ->whereHas('reservationSeats.seat', function(Builder $query) {
+            ->whereHas('reservationSeats.seat', function (Builder $query) {
                 $query
                     ->where('status', SeatStatus::RESERVED->value)
                     ->where('reserved_at', '<', Carbon::now()->subMinutes(2));

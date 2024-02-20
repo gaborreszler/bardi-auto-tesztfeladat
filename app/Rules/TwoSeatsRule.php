@@ -14,7 +14,7 @@ class TwoSeatsRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (2 < count($value)) {
+        if (count($value) > 2) {
             $fail('There must not be more than 2 :attribute(s) selected.');
         }
     }
