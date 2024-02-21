@@ -6,7 +6,6 @@ use App\Models\Reservation;
 use App\Models\Seat;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ReservationTest extends TestCase
@@ -81,7 +80,7 @@ class ReservationTest extends TestCase
 
         $response
             ->assertInvalid([
-                'seat' => 'There must not be more than 2 seat(s) selected.'
+                'seat' => 'There must not be more than 2 seat(s) selected.',
             ]);
     }
 
